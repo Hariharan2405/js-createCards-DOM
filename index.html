@@ -1,0 +1,125 @@
+<!DocType html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="">
+		<meta name="keywords" content="HTML,JavaScript">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Card</title>
+		<link rel="stylesheet" href="https://res.cloudinary.com/swiggy/raw/upload/dweb/css/styles.6b2b13a862da078507025a9615ee28ff.css" crossorigin="anonymous">
+		<style>
+			*{margin:0; padding:0; box-sizing:border-box;}
+			
+			.row{display:flex; flex-wrap:wrap;}
+			.col{width:25%; padding:12px;}
+			img{width:100%}
+			.coll{box-shadow:0 0 10px #ccc;}
+		</style>
+	
+	</head>
+	
+	<body>
+		<div class="cont">
+			<div class="row">
+			
+			</div>
+		</div>
+		
+		<script>
+			var items=[
+			{
+				id:1,
+				name:"SS Hydrabad Biriyani",
+				cuisine:"Biriyani, North Indian, Chinees",
+				rating:"  4.2",
+				url:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/ttx5mxi1mapcpvwuvwp9"
+
+			},
+			
+			{
+				id:2,
+				name:"Salem RR Biriyani",
+				cuisine:"Biriyani, Chettinad, Tandoori, Chinese",
+				rating:"  3.8",
+				url:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/ny8kj6b4mltw140wil1l"
+			},
+			
+			{
+				id:3,
+				name:"Tasty Kitchen",
+				cuisine:"Biriyani, South Indian, Chinese",
+				rating:"  4.4",
+				url:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/cyxyhx6wzgi9ogyapxym"
+			},
+			
+			{
+				id:4,
+				name:"Tandoori Nights",
+				cuisine:"Tandoori, Biriyani, Indian, Chinees, Seafood",
+				rating:"  2.7",
+				url:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/lgypdbyr6aohipxdxiye"
+			},
+			
+			{
+				id:5,
+				name:"Chetinese",
+				cuisine:"Biriyani, Indian, Chinees",
+				rating:"  4.0",
+				url:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/nec9n5ubswcri8veymoi"
+			}
+			];
+			
+			
+			var x=document.querySelector(".cont");
+			var y=document.querySelector(".row");
+				
+			items.forEach(function(val,ind){
+				
+				var a=document.createElement("div");
+				a.classList.add("col");
+				y.appendChild(a);
+				
+				var b=document.createElement("div");
+				b.classList.add("coll");
+				a.appendChild(b);
+				
+				var c=document.createElement("img");
+				c.classList.add("image");
+				b.appendChild(c);
+				c.setAttribute("src",val.url);
+				
+				var h3=document.createElement("h3");
+				h3.innerText=val.name;
+				a.appendChild(h3);
+				
+				var p=document.createElement("p");
+				p.innerText=val.cuisine;
+				p.style.padding="10px 0px 30px 0px";
+				a.appendChild(p);
+				
+				
+				
+				var sp=document.createElement("span");
+				sp.innerText=val.rating;
+				sp.setAttribute("class","icon-star _537e4");
+				sp.style.border="1px solid white";
+				sp.style.padding="5px 5px";
+				if(val.rating>3.9){
+					sp.style.backgroundColor="green";
+					sp.style.color="white";
+				}
+				else if(val.rating<3){
+					sp.style.backgroundColor="red";
+					sp.style.color="white";
+				}
+				else{
+					sp.style.backgroundColor="orange";
+					sp.style.color="white";
+				}
+				a.appendChild(sp);
+				
+			})
+			
+		</script>
+	</body>
+</html>
